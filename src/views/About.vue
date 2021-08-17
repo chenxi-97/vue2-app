@@ -1,5 +1,21 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <FadeInOut />
+    <div>{{ username }}</div>
   </div>
 </template>
+
+<script>
+import FadeInOut from "@/components/FadeInOut";
+export default {
+  name: "About",
+  components: { FadeInOut },
+  computed: {
+    username() {
+      return this.$route.path;
+    },
+  },
+};
+</script>
+
+<style lang="less" scoped></style>
